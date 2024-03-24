@@ -31,7 +31,7 @@ services:
     volumes:
       - ${WORDPRESS_DATA_DIR}/core:/var/www/html
       - ${WORDPRESS_WP_CONTENT_DATA_DIR}/wp-content:/var/www/html/wp-content
-      - ${WORDPRESS_WP_CONTENT_DATA_DIR}/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ${WORDPRESS_WP_CONTENT_DATA_DIR:-./uploads.ini}:/usr/local/etc/php/conf.d/uploads.ini
 
   phpmyadmin:
       depends_on:
